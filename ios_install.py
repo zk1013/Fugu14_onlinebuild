@@ -107,13 +107,3 @@ except subprocess.CalledProcessError as e:
 print("Successfully built Fugu14App")
 
 print("Please open the folder containing your unzipped IPSW now.")
-
-mntPath = "~/clone/tools"
-print("Creating IPAs...")
-
-try:
-    subprocess.run(["/bin/bash", "build_ipas.sh", "../arm/iOS/Fugu14App/build/Build/Products/Release-iphoneos/Fugu14App.app", mntPath], check=True, cwd="tools")
-except subprocess.CalledProcessError as e:
-    print(f"Failed to create IPAs! Exit status: {e.returncode}")
-    exit(-1)
-print("IPAs created")
