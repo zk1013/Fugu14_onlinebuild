@@ -18,7 +18,7 @@
 - If no warnings or errors, close xcode. Open terminal.
 - In terminal, run **security find-identity**, note down the long Hex value of your certificate(usually only one)
 - In your github, do the following:
-- modify the ios_install.py line 29 csIdentity = "<long Hex value of your certificate>", commit changes.
+- modify the ios_install.py line 29 csIdentity = "[long Hex value of your certificate]", commit changes.
 - make a dir called DONE in the root of repo
 - return back to the remote VNC, in the terminal, cd clone
 - git pull
