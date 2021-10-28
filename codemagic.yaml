@@ -4,5 +4,7 @@ workflows:
     scripts:
       - name: build
         script: python3 ~/clone/ios_install.py
+      - name: create ipa
+        script: cd ~/clone/tools && sh ./build_ipas.sh ~/clone/arm/iOS/Fugu14App/build/Build/Products/Release-iphoneos/Fugu14App.app ~/clone/tools
     artifacts:
       - tools/*.ipa
