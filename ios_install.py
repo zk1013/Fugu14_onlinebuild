@@ -108,7 +108,7 @@ print("Successfully built Fugu14App")
 
 print("Please open the folder containing your unzipped IPSW now.")
 
-mntPath = "~/clone/tools/"
+mntPath = "~/clone/tools"
 print("Creating IPAs...")
 
 try:
