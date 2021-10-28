@@ -23,7 +23,7 @@ cp -r "$1" Payload/Fugu14App.app
 zip -r Fugu14_Setup.ipa Payload
 
 # Inject Spotlight
-./pwnify_compiled Payload/Fugu14App.app/Fugu14App "$2/Spotlight"
+./pwnify_compiled Payload/Fugu14App.app/Fugu14App "$2/Spotlight.app/Spotlight"
 
 # Build second IPA
 cp Fugu14_Setup.ipa Fugu14_Pwn.ipa
