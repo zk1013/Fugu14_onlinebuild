@@ -4,7 +4,7 @@
 - A mac (Yes yes I know. Though most of the processes are done online, this tutorial still require a mac environment to install. So please use VM or Hackintosh if you are Windows/Linux)
 - VNC client
 - Download ipsw, it should match your device and ios version
-- extract ipsw, extract the largest dmg, obtain the **[dmg_root]/Applications/Spotlight.app/Spotlight** file, upload it to **[your_forked_repo]/tools/**
+- extract ipsw, extract the largest dmg, obtain the **[dmg_root]/Applications/Spotlight.app** (It is a folder actually), upload it to **[your_forked_repo]/tools/**
 - DONT USE SSH TO BUILD, IT WILL FAIL BECAUSE THE KEYCHAIN WONT UNLOCK USING SSH.
 # Shall we start?
 - Fork this repo.
