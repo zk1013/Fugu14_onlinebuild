@@ -2,9 +2,15 @@ workflows:
   my-workflow:
     max_build_duration: 120
     scripts:
-      - name: build
-        script: python3 ~/clone/ios_install.py
-      - name: create ipa
+      - name: Wait for login
+        script: python3 ~/clone/wait_login.py
+      - name: Build jailbreakd
+        script: cd ~/clone/arm/iOS/jailbreakd/ && sh ./build.sh "JDVQZVBU9X"
+      - name: Get & Patch CDHash
+        script: cdhash=$(codesign -dvvv ~/clone/arm/iOS/Fugu14App/Fugu14App/jailbreakd) && python3 ~/clone/cdhash_patch.py $cdhash
+      - name: Build Fugu14App
+        script: cd ~/clone/arm/iOS/Fugu14App && xcodebuild -scheme Fugu14App -derivedDataPath build
+      - name: Create ipa
         script: cd ~/clone/tools && sh ./build_ipas.sh ~/clone/arm/iOS/Fugu14App/build/Build/Products/Release-iphoneos/Fugu14App.app ~/clone/tools
     artifacts:
       - tools/*.ipa
