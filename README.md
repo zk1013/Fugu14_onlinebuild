@@ -4,8 +4,8 @@
 - A mac (Yes yes I know. Though most of the processes are done online, this tutorial still require a mac environment to install. So please use VM or Hackintosh if you are Windows/Linux)
 - VNC client
 - Download ipsw, it should match your device and ios version
-- extract ipsw, extract the largest dmg, obtain the **[dmg_root]/Applications/Spotlight.app** (It is a folder actually), upload it to **[your_forked_repo]/tools/**
-- DONT USE SSH TO BUILD, IT WILL FAIL BECAUSE THE KEYCHAIN WONT UNLOCK USING SSH.
+- extract ipsw, extract the largest dmg, obtain the **[dmg_root]/Applications/Spotlight.app/Spotlight**, upload it to **[your_forked_repo]/tools/**
+- You may use ssh to manually build.
 # Shall we start?
 - Fork this repo.
 - Login https://codemagic.io/start/ with your github account, you can bind the forked repo to the apps for quick start.
@@ -14,14 +14,9 @@
 - Open Finder, navigate to **~/clone/arm/iOS/Fugu14App/**, open **Fugu14App.xcodeproj**
 - In Xcode, click Fugu14 on the left-side panel(top-most item of the tree view). In the middle pannel, click **Signing & Capabilities**. You will notice there are errors about signing.
 - Click team, add team, login with your Apple id.
-- Change the bundle name with a random one, Xcode will automatically generate a free provision.
-- If no warnings or errors, close xcode. Open terminal.
-- In terminal, run **security find-identity**, note down the long Hex value of your certificate(usually only one)
-- In your github, do the following:
-- modify the ios_install.py line 29 csIdentity = "[long Hex value of your certificate]", commit changes.
-- make a dir called DONE in the root of repo
-- return back to the remote VNC, in the terminal, cd clone
-- git pull
+- Xcode will ask for password to unlock keychain, leave it blank and enter.
+- Change the bundle name with a random one(you better note it down so that you dont waste an APP ID), Xcode will automatically generate a free provision.
+- If no warnings or errors, close xcode. Make a dir called DONE in ~/clone.
 - Then cross your finger, one the compile is done, there will be two .ipa file.
 # Fugu14 - Untethered iOS 14 Jailbreak
 
