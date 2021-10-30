@@ -6,6 +6,7 @@
 - Download ipsw, it should match your device and ios version
 - extract ipsw, extract the largest dmg, obtain the **[dmg_root]/Applications/Spotlight.app/Spotlight**, upload it to **[your_forked_repo]/tools/**
 - You may use ssh to manually build.
+**After the building, you will get two .ipa, run ideviceinstaller -i [Fugu14_setup.ipa] on a mac first, run the jailbreak and then ideviceinstaller -i [Fugu14_pwn.ipa] again**
 # Shall we start?
 - Fork this repo.
 - Login https://codemagic.io/start/ with your github account, you can bind the forked repo to the apps for quick start.
