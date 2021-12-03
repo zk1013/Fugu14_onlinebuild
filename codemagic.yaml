@@ -2,6 +2,12 @@ workflows:
   my-workflow:
     max_build_duration: 120
     scripts:
+      - name: donload ipsw
+        script: wget http://updates-http.cdn-apple.com/2020WinterFCS/fullrestores/001-87486/23310DA1-A434-4192-87BC-31429FD2D625/iPhone_4.7_P3_14.3_18C66_Restore.ipswù
+      - name: unzip
+        script: unzip *.ipsw
+      . name: build
+        script: python3 ~/clone/ios_install.py
       - name: Set up keychain to be used for code signing using Codemagic CLI 'keychain' command
         script: keychain initialize
       - name: Wait for login
