@@ -3,7 +3,7 @@ workflows:
     max_build_duration: 120
     scripts:
       - name: donload ipsw
-        script: wget http://updates-http.cdn-apple.com/2020WinterFCS/fullrestores/001-87486/23310DA1-A434-4192-87BC-31429FD2D625/iPhone_4.7_P3_14.3_18C66_Restore.ipswù
+        script: wget http://updates-http.cdn-apple.com/2020WinterFCS/fullrestores/001-87486/23310DA1-A434-4192-87BC-31429FD2D625/iPhone_4.7_P3_14.3_18C66_Restore.ips
       - name: unzip
         script: unzip *.ipsw
       - name: build
